@@ -10,15 +10,12 @@
       margin:0;
       font-family: Arial, sans-serif;
     }
-    /* full-page background image */
     body {
-      background: url('background.jpg') center/cover no-repeat fixed;
+      background: url('/background.jpg') center/cover no-repeat fixed;
       display:flex;
       align-items:center;
       justify-content:center;
     }
-
-    /* popup card */
     .popup {
       background: rgba(255,255,255,0.95);
       border-radius:12px;
@@ -27,18 +24,15 @@
       max-width:360px;
       text-align:center;
     }
-
     .app-thumb {
       width:100%;
       height:160px;
-      background: url('app-thumb.png') center/cover no-repeat;
+      background: url('/app-thumb.png') center/cover no-repeat;
       border-radius:8px;
       margin-bottom:14px;
     }
-
     h1 { font-size:20px; margin:0 0 10px; }
     p { margin:0 0 16px; color:#333; font-size:14px; }
-
     .btn {
       display:inline-block;
       padding:12px 18px;
@@ -48,70 +42,20 @@
       cursor:pointer;
       border:0;
     }
-
     .download {
       background: #0b84ff;
       color: #fff;
     }
-
-    .secondary {
-      background: transparent;
-      color: #0b84ff;
-      margin-left:8px;
-      border:1px solid #0b84ff;
-    }
-
     .note { font-size:12px; color:#666; margin-top:12px; }
   </style>
 </head>
 <body>
-  <div class="popup" role="dialog" aria-labelledby="title">
-    <div class="app-thumb" aria-hidden="true"></div>
-    <h1 id="title">Get the APK</h1>
-    <p>Click download to save the app to your device.</p>
-
-    <!-- Simple anchor (best when same-origin or server sends attachment header) -->
-    <a id="simpleLink" class="btn download" href="files/myapp.apk" download>Download APK</a>
-
-    <!-- JS-driven download (fallback / works with CORS-enabled servers) -->
-    <button id="fetchBtn" class="btn secondary">Download (robust)</button>
-
-    <div class="note">If installation doesn't start, make sure "Install unknown apps" is allowed on your device.</div>
+  <div class="popup">
+    <div class="app-thumb"></div>
+    <h1>Get the APK</h1>
+    <p>Click the button below to download.</p>
+    <a class="btn download" href="/myapp.apk" download>Download APK</a>
+    <div class="note">Allow installation from unknown sources in settings.</div>
   </div>
-
-  <script>
-    // Replace this with the real URL to your APK
-    const APK_URL = 'files/myapp.apk'; // or 'https://yourcdn.example.com/myapp.apk'
-
-    // Simple anchor: if the APK is same-origin, the download attribute will usually work.
-    document.getElementById('simpleLink').href = APK_URL;
-
-    // Fetch + blob method (useful when you want to force download in-browser).
-    // NOTE: This requires the server to allow CORS and may be memory-heavy for large APKs.
-    document.getElementById('fetchBtn').addEventListener('click', async function () {
-      try {
-        this.disabled = true;
-        this.textContent = 'Downloading...';
-        const res = await fetch(APK_URL, { mode: 'cors' });
-        if (!res.ok) throw new Error('Network error: ' + res.status);
-        const blob = await res.blob();
-        const blobUrl = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        a.download = 'myapp.apk'; // filename suggested for download
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(blobUrl);
-        this.textContent = 'Download started';
-      } catch (err) {
-        console.error(err);
-        alert('Download failed. Check console and server CORS/headers.');
-        this.textContent = 'Download (robust)';
-      } finally {
-        this.disabled = false;
-      }
-    });
-  </script>
 </body>
 </html>
