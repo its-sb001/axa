@@ -1,291 +1,228 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Pay premium</title>
-<meta name="color-scheme" content="light">
-<style>
-:root{
-  --brand:#8D1A4B;
-  --brand-600:#8D1A4B;
-  --ink:#0D2136;
-  --muted:#6C7A89;
-  --bg:#ffffff;
-  --panel:#F6F8FB;
-  --border:#E6ECF2;
-  --radius:12px;
-  --shadow:0 4px 16px rgba(15,23,42,.06);
-  --header:#0F1C2D;
-  --link:#2F5EB3;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-img{max-width:100%;display:block}
-button,input,select{font:inherit}
-a{color:inherit;text-decoration:none}
-.container{max-width:640px;margin:0 auto}
-.header{
-  position:sticky;top:0;z-index:50;background:var(--header);
-  color:#fff;padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.08)
-}
-.header-row{display:flex;align-items:center;gap:10px}
-.brand{display:flex;align-items:center;gap:10px;min-width:0}
-.brand img{height:26px;width:auto}
-.menu-btn{margin-left:auto;background:transparent;border:0;color:#fff;padding:8px;border-radius:8px}
-.login-btn{
-  background:#fff;color:var(--header);border:0;padding:8px 12px;border-radius:999px;font-weight:600
-}
-.hero{
-  background:linear-gradient(180deg,#F2F6FC 0%, #ffffff 80%);
-  padding:18px 16px 8px
-}
-.card{
-  background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)
-}
-h1{font-size:24px;margin:2px 0 12px}
-.label{font-size:12px;color:var(--muted);margin-bottom:6px}
-.input{
-  width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;
-  outline:none;background:#fff
-}
-.input:focus{border-color:#c6d8ff;box-shadow:0 0 0 3px rgba(98,129,255,.15)}
-.row{display:grid;gap:12px}
-.primary{
-  margin-top:12px;width:100%;padding:12px 16px;border-radius:999px;border:0;
-  background:var(--brand);color:#fff;font-weight:700
-}
-.primary:active{transform:translateY(1px)}
-.altlink{display:inline-block;margin-top:10px;color:var(--link);font-weight:600}
-.section{
-  border-top:1px solid var(--border);background:#fff
-}
-.accordion{padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
-.accordion h3{font-size:15px;margin:0}
-.chev{transition:transform .2s}
-.panel{display:none;padding:0 16px 12px;color:#49576a;background:#fff}
-.panel.open{display:block}
-.badges{display:flex;gap:12px;padding:16px}
-.badge{flex:0 0 48%;background:#fff;border:1px solid var(--border);border-radius:12px;padding:8px;display:flex;justify-content:center}
-.social{display:flex;gap:12px;padding:0 16px 16px}
-.social a{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;background:#fff}
-.pillwrap{display:flex;flex-wrap:wrap;gap:10px;padding:8px 16px 16px}
-.pill{border:1px solid var(--border);border-radius:999px;padding:10px 12px;color:#314155;background:#fff}
-.footer-title{font-weight:700;padding:10px 16px}
-.group{padding:0 16px 16px;color:#36465a}
-.notice{background:#f8fafc;border-top:1px solid var(--border);padding:16px;color:#4b5563;font-size:13px}
-.disclaimer{padding:12px 16px;border-top:1px solid var(--border);color:#5b6878}
-.small{font-size:12px;line-height:1.45}
-.bg-bubbles{
-  position:absolute;inset:0;pointer-events:none;opacity:.3;background:
-    radial-gradient(160px 160px at 15% 15%, #E6EEFC, transparent 60%),
-    radial-gradient(190px 190px at 80% 10%, #EDF2FB, transparent 60%),
-    radial-gradient(140px 140px at 25% 70%, #EDF3FF, transparent 60%);
-  z-index:0
-}
-.relative{position:relative}
-.z1{position:relative;z-index:1}
-.hidden{display:none}
-.logo-svg{height:26px}
-.logo-small{height:20px}
-@media (min-width:480px){
-  .container{max-width:420px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Axis Max Life Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Replace with exact brand fonts if available -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-  <div class="header-row">
-    <button class="menu-btn" aria-label="Menu">☰</button>
 
-    <!-- TEMP LOGO (HEADER) — replace this SVG with your own file -->
-    <div class="brand">
-      <svg id="tempLogo" class="logo-svg" viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Temporary Logo">
-        <rect width="140" height="32" rx="6" fill="#ffffff" opacity="0.12"/>
-        <text x="16" y="22" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#ffffff">LOGO</text>
-      </svg>
-      <!-- When ready, comment the SVG above and uncomment the line below, pointing to your real file -->
-      <!-- <img src="logo.svg" alt="Brand logo" class="logo-svg"> -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="assets/logo.png" alt="Axis Max Life Insurance" class="logo">
     </div>
-
-    <button class="login-btn">Customer Login</button>
-  </div>
-</header>
-
-<main class="container">
-  <section class="hero relative">
-    <div class="bg-bubbles"></div>
-    <div class="z1">
-      <!-- TEMP LOGO (HERO) — replace this SVG with your own file -->
-      <svg id="tempLogoSmall" class="logo-small" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Temporary Logo">
-        <rect width="120" height="24" rx="6" fill="#0F1C2D" opacity="0.06"/>
-        <text x="10" y="17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="700" fill="#0F1C2D">LOGO</text>
-      </svg>
-      <!-- <img src="logo.svg" alt="Brand small logo" class="logo-small"> -->
-
-      <div class="card">
-        <h1>KYC Verification</h1>
-        <p class="small" style="color:#556274;margin-top:-6px;margin-bottom:12px">
-          Please login using your Policy number or Phone number
-        </p>
-        <form id="payForm" class="row" novalidate>
-          <div>
-            <label class="label" for="phone">Phone number</label>
-            <input id="phone" name="phone" class="input" type="tel" inputmode="tel" placeholder="Enter phone number" required>
-          </div>
-          <div>
-            <label class="label" for="dob">Date of birth</label>
-            <input id="dob" name="dob" class="input" type="date" required>
-          </div>
-          <button class="primary" type="submit">Complete KYC</button>
-        </form>
-        <a href="#" id="toggleMode" class="altlink">Continue with your policy number</a>
-      </div>
+    <div class="topbar-right">
+      <button class="login-pill">Customer Login</button>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <button class="accordion" aria-expanded="false">
-      <h3>Term Insurance Plans</h3>
-      <span class="chev">⌄</span>
-    </button>
-    <div class="panel small">Content goes here.</div>
-  </section>
+  <main>
+    <!-- Soft background motif -->
+    <div class="bg-motif" aria-hidden="true"></div>
 
-  <section class="section">
-    <button class="accordion" aria-expanded="false">
-      <h3>Tools & Calculators</h3>
-      <span class="chev">⌄</span>
-    </button>
-    <div class="panel small">Content goes here.</div>
-  </section>
-
-  <section class="section">
-    <button class="accordion" aria-expanded="false">
-      <h3>Customer Service</h3>
-      <span class="chev">⌄</span>
-    </button>
-    <div class="panel small">Content goes here.</div>
-  </section>
-
-  <section class="section">
-    <button class="accordion" aria-expanded="false">
-      <h3>Investment Plans</h3>
-      <span class="chev">⌄</span>
-    </button>
-    <div class="panel small">Content goes here.</div>
-  </section>
-
-  <section class="section">
-    <button class="accordion" aria-expanded="false">
-      <h3>Life Insurance Plans</h3>
-      <span class="chev">⌄</span>
-    </button>
-    <div class="panel small">Content goes here.</div>
-  </section>
-
-  <section class="section">
-    <button class="accordion" aria-expanded="false">
-      <h3>About Us</h3>
-      <span class="chev">⌄</span>
-    </button>
-    <div class="panel small">Content goes here.</div>
-  </section>
-
-  <div class="badges">
-    <a class="badge" href="#"><img src="appstore.svg" alt="Download on the App Store"></a>
-    <a class="badge" href="#"><img src="playstore.svg" alt="Get it on Google Play"></a>
-  </div>
-
-  <div class="social">
-    <a href="#" aria-label="Facebook"><img alt="" src="icon-fb.svg" width="18"></a>
-    <a href="#" aria-label="Twitter"><img alt="" src="icon-x.svg" width="18"></a>
-    <a href="#" aria-label="Instagram"><img alt="" src="icon-ig.svg" width="18"></a>
-    <a href="#" aria-label="YouTube"><img alt="" src="icon-yt.svg" width="18"></a>
-  </div>
-
-  <div class="pillwrap">
-    <span class="pill">IRDAI Consumer Education Website</span>
-    <span class="pill">Agent Suspended</span>
-    <span class="pill">Do Not Disturb</span>
-    <span class="pill">Ombudsman</span>
-    <span class="pill">Privacy Policy</span>
-    <span class="pill">Disclaimers</span>
-    <span class="pill">Service TATs</span>
-    <span class="pill">Grievance Redressal</span>
-    <span class="pill">Bima Bharosa</span>
-    <span class="pill">Unclaimed Amount</span>
-    <span class="pill">Withdrawn Plans</span>
-    <span class="pill">Sitemap</span>
-    <span class="pill">UW Approach & Philosophy</span>
-  </div>
-
-  <div class="footer-title">Group Sites</div>
-  <div class="group small">
-    - Max India<br>
-    - Max Financial Services<br>
-    - Antara Senior Living<br>
-    - Max Life Pension Fund Management
-  </div>
-
-  <div class="notice small">
-    Beware of spurious phone calls and fictitious/fraudulent offers.
-  </div>
-
-  <div class="disclaimer small">
-    IRDAI clarifies to public that: [replace with your legal copy].<br>
-    Registration No. XXX, CIN: XXXXX, etc.
-  </div>
-</main>
-
-<script>
-const accs = document.querySelectorAll('.accordion');
-accs.forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const panel = btn.nextElementSibling;
-    const open = panel.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-    btn.querySelector('.chev').style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
-  });
-});
-
-const toggle = document.getElementById('toggleMode');
-const form = document.getElementById('payForm');
-let byPolicy = false;
-
-toggle.addEventListener('click', (e)=>{
-  e.preventDefault();
-  byPolicy = !byPolicy;
-  form.innerHTML = byPolicy
-    ? `
-      <div>
-        <label class="label" for="policy">Policy number</label>
-        <input id="policy" name="policy" class="input" type="text" placeholder="Enter policy number" required>
+    <!-- Hero brand card -->
+    <section class="hero">
+      <div class="brand-card">
+        <img src="assets/logo-card.png" alt="Axis Max Life Insurance">
       </div>
-      <div>
-        <label class="label" for="dob2">Date of birth</label>
-        <input id="dob2" name="dob" class="input" type="date" required>
-      </div>
-      <button class="primary" type="submit">Continue to payment</button>
-    `
-    : `
-      <div>
-        <label class="label" for="phone">Phone number</label>
-        <input id="phone" name="phone" class="input" type="tel" inputmode="tel" placeholder="Enter phone number" required>
-      </div>
-      <div>
-        <label class="label" for="dob">Date of birth</label>
-        <input id="dob" name="dob" class="input" type="date" required>
-      </div>
-      <button class="primary" type="submit">Continue to payment</button>
-    `;
-  toggle.textContent = byPolicy ? 'Continue with your phone number' : 'Continue with your policy number';
-});
+    </section>
 
-form.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  alert('Hook this up to your payment/login API.');
-});
-</script>
+    <!-- Pay premium form -->
+    <section class="pay-premium">
+      <h1>Pay premium</h1>
+      <p class="sub">Please login using your Policy number or Phone number</p>
+
+      <form class="form">
+        <label class="field">
+          <span>Phone number</span>
+          <input type="tel" placeholder="">
+        </label>
+
+        <label class="field">
+          <span>Date of birth</span>
+          <input type="date" placeholder="">
+        </label>
+
+        <button type="button" class="primary">Continue to payment</button>
+
+        <button type="button" class="linkish">
+          Continue with your policy number
+        </button>
+      </form>
+
+      <!-- Accordions -->
+      <div class="accordion">
+        <details>
+          <summary>Term Insurance Plans</summary>
+          <div class="panel">
+            <ul>
+              <li>Max Life Smart Secure Plus</li>
+              <li>Return of Premium option</li>
+              <li>Critical illness add-ons</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Tools &amp; Calculators</summary>
+          <div class="panel">
+            <ul>
+              <li>Term Insurance Calculator</li>
+              <li>Human Life Value</li>
+              <li>Retirement Planner</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Customer Service</summary>
+          <div class="panel">
+            <ul>
+              <li>Track Application</li>
+              <li>Claim Support</li>
+              <li>Download Statements</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Investment Plans</summary>
+          <div class="panel">
+            <ul>
+              <li>ULIPs</li>
+              <li>Guaranteed Plans</li>
+              <li>Child Plans</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Life Insurance Plans</summary>
+          <div class="panel">
+            <ul>
+              <li>Whole Life</li>
+              <li>Endowment</li>
+              <li>Money Back</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>About Axis Max Life</summary>
+          <div class="panel">
+            <p>Company overview, vision &amp; values.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Store badges + social -->
+    <section class="stores-social">
+      <div class="stores">
+        <img src="assets/appstore.png" alt="Available on the App Store" class="store-badge">
+        <img src="assets/googleplay.png" alt="Get it on Google Play" class="store-badge">
+      </div>
+      <div class="social">
+        <img src="assets/icon-fb.png" alt="Facebook">
+        <img src="assets/icon-x.png" alt="X">
+        <img src="assets/icon-li.png" alt="LinkedIn">
+        <img src="assets/icon-ig.png" alt="Instagram">
+        <img src="assets/icon-yt.png" alt="YouTube">
+      </div>
+    </section>
+
+    <!-- Quick links tags -->
+    <section class="tags">
+      <button>IRDAI Consumer Education Website</button>
+      <button>Agent Suspended &amp; T.</button>
+      <button>Do Not Disturb</button>
+      <button>Insurance Ombudsman</button>
+      <button>Privacy Policy</button>
+      <button>Disclaimers</button>
+      <button>Service TATs</button>
+      <button>Grievance Redressal</button>
+      <button>Bima Bharosa</button>
+      <button>Unclaimed Amount</button>
+      <button>Withdrawn Plans</button>
+      <button>Sitemap</button>
+      <button>UW Approach &amp; Philosophy</button>
+    </section>
+
+    <!-- Group sites -->
+    <section class="group-sites">
+      <h2>Group Sites</h2>
+      <ul>
+        <li>MAX INDIA</li>
+        <li>MAX FINANCIAL SERVICES</li>
+        <li>ANTARA SENIOR LIVING</li>
+        <li>MAX LIFE PENSION FUND MANAGEMENT</li>
+      </ul>
+    </section>
+
+    <!-- Spoofing warning -->
+    <section class="warning">
+      <h3>BEWARE OF SPOOFING PHONE CALLS AND FRAUDULENT OFFERS</h3>
+      <ul>
+        <li>Do not share one-time password (OTP)</li>
+        <li>Do not click unknown links</li>
+        <li>Verify caller identity</li>
+      </ul>
+    </section>
+
+    <!-- Regulatory block -->
+    <section class="regulatory">
+      <div class="cols">
+        <div class="col">
+          <p>IRDAI clarifies to public:</p>
+          <ul>
+            <li>IRDAI does not involve directly or indirectly in sale of insurance policies.</li>
+            <li>IRDAI does not announce bonuses.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <p>Regd. Office:</p>
+          <p>MAX LIFE INSURANCE COMPANY LIMITED</p>
+          <p>CIN: U74899DL2000PLCXXXXXXXX</p>
+          <p>IRDAI Registration No. 104</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimers -->
+    <section class="disclaimers">
+      <details open>
+        <summary>DISCLAIMERS</summary>
+        <div class="panel">
+          <p>Product features and benefits are subject to policy terms and conditions.</p>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© Axis Max Life Insurance</p>
+  </footer>
+
+  <script>
+    // Ensure only one accordion open at a time (matches common mobile behavior)
+    document.querySelectorAll('.accordion details').forEach(d => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          document.querySelectorAll('.accordion details').forEach(o => {
+            if (o !== d) o.open = false;
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
