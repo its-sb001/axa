@@ -1,6 +1,6 @@
 :root{
-  --brand-maroon:#7b183a;   /* from logo */
-  --brand-blue:#173c6d;     /* from logo text */
+  --brand-maroon:#7b183a;
+  --brand-blue:#173c6d;
   --ink:#0e1a2b;
   --ink-2:#30445f;
   --muted:#5c6b80;
@@ -9,8 +9,9 @@
   --stroke:#e5e9f0;
   --pill:#eef2f8;
   --focus:#8aa8ff;
-  --link:#6a1b9a; /* subtle purple for linkish */
+  --link:#6a1b9a;
   --shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px rgba(16,24,40,.06);
+  --social:#223a63; /* single-color blue used for icons to match screenshot */
 }
 
 *{box-sizing:border-box}
@@ -99,14 +100,23 @@ details[open] summary::after{transform:rotate(270deg)}
 .panel{padding:0 4px 14px 4px; color:#4a5a70; font-size:14px}
 .panel ul{margin:8px 0 0; padding-left:18px}
 
-.stores-social{
-  padding:18px 16px 6px; text-align:center;
-}
+.stores-social{padding:18px 16px 6px; text-align:center}
 .stores{display:flex; justify-content:center; gap:12px; margin-bottom:10px}
 .store-badge{height:34px; width:auto; filter:grayscale(18%) contrast(110%)}
 
-.social{display:flex; justify-content:center; gap:18px}
-.social img{height:18px; width:18px; opacity:.9}
+.social{
+  display:flex; justify-content:center; gap:28px; /* increased spacing to match screenshot */
+  padding:6px 0 0;
+}
+.social-btn{
+  width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center;
+  color:var(--social); /* single-color blue */
+}
+.ico{
+  width:22px; height:22px; display:block;
+  stroke-linecap:round; stroke-linejoin:round;
+  opacity:.95;
+}
 
 .tags{
   padding:10px 12px 0; display:flex; flex-wrap:wrap; gap:8px;
